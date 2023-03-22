@@ -47,7 +47,7 @@ const todoList = () => {
       // Format the To-Do list here, and return the output string
       // as per the format given above.
       let finalDisplayArray = [];
-      list.forEach((item) => {
+      list.forEach((item,index) => {
         if (item.dueDate === yesterday) {
                    if (item.completed === true) {
             finalDisplayArray.push("[x]" + " " + item.title + " " + item.dueDate);
@@ -69,10 +69,8 @@ const todoList = () => {
         
   
       })
-      let temp = " ";
-      finalDisplayArray.forEach((item)=>{
-          temp = item + "\n" + temp
-      })
+      finalDisplayArray.reverse();
+      let temp = finalDisplayArray.join("\n");
       return temp;
     }
   
